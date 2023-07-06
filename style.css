@@ -1,0 +1,315 @@
+:root{
+   --light-grey : #BDBDBD;
+   --green : #3DB46D;
+   --red : #EB5757;
+   --grey : #4F4F4F;
+
+   --dark-grey : #333333;
+}
+
+body{
+   position: relative;
+   width: 100vw;
+   overflow-x: hidden;
+}
+
+*{
+   padding: 0;
+   margin: 0;
+   font-family: "Poppins", sans-serif;
+   box-sizing: border-box;
+}
+
+.showWhenMobile{
+   display: none;
+}
+
+a,button{
+   all: unset;
+   cursor: pointer;
+   
+}
+
+
+p,h1,h2,a{
+   color: var(--dark-grey);
+}
+input{
+   border: 1px solid var(--light-grey);
+   color: var(--grey);
+   border-radius: 1rem;
+   font-size: 1rem;
+
+}
+
+input::placeholder{
+   color: var(--light-grey);
+}
+
+header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   padding: 3rem ;
+
+   background: white;position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   z-index: 3;
+}
+
+.headerLogo{
+   font-weight: 600;
+   font-size: 1.5rem;
+
+}
+
+header > div:not(.actionBtns){
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+
+}
+.actionBtns{
+   display: none;
+}
+
+header > div > div{
+   position: relative;
+
+}
+
+
+header > div > div label{
+   position: absolute;
+   left: 1.5rem;
+   top: 50%;
+   transform: translate(-50% , -50%);
+   color: var(--light-grey)
+}
+
+
+header > div > div input{
+   width: 100%;
+   padding: 1rem 1rem 1rem 3rem;
+}
+
+.loginBtn , .addAPhoto{
+   padding: 0.5rem 1rem;
+   border-radius: 1rem;
+   transition: 0.3s;
+   box-shadow: 0px 4px 10px 0px #3DB46D33;
+   border: var(--green) 2px solid;
+
+}
+
+.addAPhoto{
+   background: var(--green);
+   color:white;
+   
+}
+
+.addAPhoto:hover{
+   background: none;
+   color: var(--green);
+}
+
+.loginBtn{
+   background: none;
+   color: var(--green);
+}
+
+.loginBtn:hover{
+   background: var(--green);
+   color:white;
+}
+
+
+
+/* logout form */
+
+.popupForm{
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   background: #33333333;
+   top: 0;left: 0;
+   display: none;
+   place-content: center;
+   z-index: 10;
+   overflow: hidden;
+   /* top: 0; */
+}
+.popupForm .container{
+   background: white;
+   padding: 2rem;
+   border-radius: 2rem;
+   display: flex;
+   flex-direction: column;
+   min-width: 40vw;
+}
+
+.popupForm .container h1{
+   margin-bottom: 2rem;
+
+}
+
+.popupForm .container label{
+   font-size: 1.1rem;
+   font-weight: 500;
+   padding: 0.2rem;
+}
+
+.popupForm .container input{
+   align-self: flex-start;
+   padding: 0.5rem;
+   margin-bottom: 2rem;
+   width: 70%;
+}
+
+#logoutForm .container button , #deletePostForm .container button {
+   align-self: center;
+   padding: 0.5rem 1rem;
+   background: var(--red);
+   border: red 1px solid;
+   border-radius: 10px;
+}
+
+#addNewPhotoForm .container button{
+   align-self: center;
+   padding: 0.5rem 1rem;
+   background: var(--green);
+   border: var(--green) 1px solid;
+   border-radius: 10px;
+}
+.errormessage{
+   background: var(--red);
+   border: 1px solid red;
+   padding: 1rem;
+   margin-bottom: 1rem;
+}
+
+.popupForm .actionsBtns{
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+}
+
+.popupForm * .actionsBtns [type = "reset"]{
+   background: var(--light-grey) !important;
+   border: var(--dark-grey) 1px solid !important;
+}
+
+
+.profileHead h1{
+   text-align: center;
+   font-size: 2vw;
+}
+
+/* gridContainer */
+
+
+.gridContainer{
+   width: 100%;
+   /* display: grid; */
+   /* grid-template-columns: repeat(3, 1fr); */
+   gap: 2rem;  
+   padding: 5rem 10vw;
+   /* box-sizing: border-box; */
+   margin-top: 13vh;
+
+}
+
+
+.gridContainer.column{
+   /* display: grid;
+   grid-template-columns: minmax(0,1fr);
+   gap: 2rem;
+   max-height: 0; */
+   column-count: 3;
+}
+
+.gridContainer.column img{
+   width: 100%;
+   height: 100%;
+   border-radius: 2rem;
+
+}
+
+.gridContainer.column .img{
+   position: relative;
+   margin-bottom: 2rem;
+}
+/* .gridContainer .column .img:last-child{ */
+  
+/* } */
+
+.gridContainer.column .img .overlay{
+   position: absolute;
+
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #33333333;
+   border-radius: 2rem;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   
+   transition: all 0.3s;
+   opacity: 0;
+   
+}
+
+.gridContainer.column .img:hover .overlay{
+   opacity: 1;
+}
+
+.gridContainer.column .img .overlay .top{
+   padding: 1rem;
+}
+
+.gridContainer.column .img .overlay .top a , .gridContainer.column .img .overlay .top button{
+   float: right;
+   color: var(--red);
+   padding: 0.5rem;
+   border: 1px solid var(--red);
+   border-radius: 100vmax;
+   margin-right: 10px;
+   transition: 0.3s;
+}
+
+.gridContainer.column .img .overlay .top a:hover , .gridContainer.column .img .overlay .top button:hover{
+   color: white;
+   background: var(--red);
+}
+
+
+.gridContainer.column .img .overlay .bottom{
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   padding: 1rem;
+
+}
+
+
+.gridContainer.column .img .overlay .bottom *{
+   color: white;
+}
+
+.likeBtn {
+   width: 4rem;
+   height: 4rem;
+   margin-right: 1rem;
+}
+
+.likeBtn *{
+   fill: currentColor;
+   stroke: currentColor;
+   color: var(--red) !important;
+}
