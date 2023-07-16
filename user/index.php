@@ -23,7 +23,7 @@ include('../connection.php');
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="indexa.js" defer></script>
+  <script src="index.js" defer></script>
   
 
 </head>
@@ -149,7 +149,7 @@ include('../connection.php');
   </form>
 
 
-  <div class="profileHead" style="margin-top : 17vh">
+  <div class="profileHead" style="margin-top : 20vh">
      <h1> <?php echo $_GET['username'] ?> </h1>
      </div>
   <div class="gridContainer column" style="margin-top : 0">

@@ -17,6 +17,7 @@ function includeHeader($pos){
   <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./responsiveness.css">
   <title>Devchallenges</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
@@ -107,15 +108,7 @@ function includeHeader($pos){
 
   </form>
 
-<!-- 
-  <script>
-   function deletePost(id){
-  const deletePostForm = document.querySelector('#deletePostForm')
-   deletePostForm.setAttribute('action', `deletePost.php?id=${id}`)
-   deletePostForm.style.display = 'grid'
 
-}
-</script> -->
 
   <form action="" method="post" id="deletePostForm" class="popupForm"
   style="

@@ -23,11 +23,6 @@ document.addEventListener('click', function(event) {
    let outsideFormClick3 = !deletePostFormContainer.contains(event.target);
    deletePostBtn.forEach(btn =>{
 
-      // let outsideBtnClick4 = !btn.contains(event.target);
-      // if (deletePostForm.style.display == 'grid' && outsideFormClick3 && outsideBtnClick4) {
-      //    deletePostForm.style.display = 'none'
-      //    window.location.href ='index.php'
-      // }
    })
 
    if (addNewPhotoForm.style.display == 'grid' && outsideFormClick2 && outsideBtnClick2 && outsideBtnClick3) {
@@ -109,3 +104,23 @@ function deletePost(id){
 function goTologinPage() {
    window.location.href = 'login?error=you must be logged in to be able to like posts&act=login';
 }
+
+
+
+
+
+
+const searchInput = document.querySelector('#searchInput')
+const posts = document.querySelectorAll('.img')
+console.log(posts);
+searchInput.addEventListener('input', () => {
+   posts.forEach(p => {
+      let description = p.querySelector('.title').innerText.toLowerCase()
+      let username = p.querySelector('.username').innerText.toLowerCase()
+      if (description.includes(searchInput.value.toLowerCase()) || username.includes(searchInput.value.toLowerCase())) {
+         p.style.display = 'block'
+      } else {
+         p.style.display = 'none'
+      }
+   });
+})

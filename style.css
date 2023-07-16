@@ -60,6 +60,8 @@ header{
    z-index: 3;
 }
 
+
+
 .headerLogo{
    font-weight: 600;
    font-size: 1.5rem;
@@ -213,27 +215,20 @@ header > div > div input{
 
 .gridContainer{
    width: 100%;
-   /* display: grid; */
-   /* grid-template-columns: repeat(3, 1fr); */
    gap: 2rem;  
    padding: 5rem 10vw;
-   /* box-sizing: border-box; */
    margin-top: 13vh;
 
 }
 
 
 .gridContainer.column{
-   /* display: grid;
-   grid-template-columns: minmax(0,1fr);
-   gap: 2rem;
-   max-height: 0; */
    column-count: 3;
 }
 
 .gridContainer.column img{
    width: 100%;
-   height: 100%;
+   height: 100% !important;
    border-radius: 2rem;
 
 }
@@ -241,10 +236,9 @@ header > div > div input{
 .gridContainer.column .img{
    position: relative;
    margin-bottom: 2rem;
+
 }
-/* .gridContainer .column .img:last-child{ */
-  
-/* } */
+
 
 .gridContainer.column .img .overlay{
    position: absolute;
@@ -252,7 +246,7 @@ header > div > div input{
    top: 0;
    left: 0;
    width: 100%;
-   height: 100%;
+   height: 100% ;
    background-color: #33333333;
    border-radius: 2rem;
 
@@ -313,3 +307,79 @@ header > div > div input{
    stroke: currentColor;
    color: var(--red) !important;
 }
+
+@media (max-width: 1440px) {
+   .gridContainer{
+      padding: 5rem 5vw;
+
+   }
+}
+
+@media (max-width: 1000px) {
+   .gridContainer{
+      gap: 1rem;
+
+   }
+   .gridContainer.column .img{
+      margin-bottom: 1rem;
+   }
+   header{
+      padding: 2rem;
+   }
+
+
+}@media (max-width: 768px) {
+   .gridContainer.column{
+      column-count: 2;
+   }
+   .gridContainer{
+      margin-top: 15vh;
+   }
+   
+   header .actionBtns{
+      position: absolute;
+      background: var(--dark-grey);
+      width: 100vw;
+      height: 50vh;
+      top: 100vh;
+      left: 0;
+      font-size: 1.4rem;
+      flex-direction: column;
+      padding: 7rem;
+      transition: 0.3s;
+      transition-delay: 0.2s;
+   }
+   header .actionBtns.active{
+      top: 50vh;
+   }
+   .showWhenMobile{
+      display: block;
+   }
+   .showWhenDesk{
+      display: none;
+   }
+   .topOnMobile{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+
+   }
+   header > div{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+   }
+   header > div > div.search {
+      width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+   .gridContainer.column{
+      column-count: 1;
+   }
+}
+
+
+
